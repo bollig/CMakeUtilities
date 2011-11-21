@@ -1,0 +1,7 @@
+PROJECT(cxxLib CXX) 
+
+FILE(GLOB SRC_FILES *.cxx)
+
+
+ADD_LIBRARY(helloShared SHARED ${SRC_FILES}) 
+ADD_LIBRARY(helloStatic STATIC ${SRC_FILES}) 

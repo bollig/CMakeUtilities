@@ -1,0 +1,16 @@
+ENABLE_TESTING()
+
+ADD_TEST(cxxSharedInp sharedCXX "group")
+ADD_TEST(cxxSharedNoInp sharedCXX)
+
+ADD_TEST(cxxStaticInp staticCXX "group")
+ADD_TEST(cxxStaticNoInp staticCXX)
+
+ADD_TEST(fortSharedInp sharedFORT "group")
+ADD_TEST(fortSharedNoInp sharedFORT)
+
+ADD_TEST(fortStaticInp staticFORT "group")
+ADD_TEST(fortStaticNoInp staticFORT)
+
+ADD_TEST(fortModInp moduleFORT "group")
+ADD_TEST(fortModNoInp moduleFORT)

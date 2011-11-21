@@ -1,0 +1,43 @@
+Example 2
+==========
+
+Adding custom makefile commands
+
+NOTES:
+=======
+
+Step 1) cmake . 
+Step 2) make
+Step 3) touch *.mod.proxy files
+Step 4) make 
+Step 5) make test
+Step 6) make package_source
+Step 7) make clean
+
+
+!! the "package_source" command will generate 
+!! <project_name>-<version>-Source.tar.gz in the current 
+!! directory of this project. If you run "make package" 
+!! you will get a <project_name>-<version>-<platform>.tar.gz 
+!! which contains the binaries and libraries compiled 
+!! for your specific platform. 
+
+!! To modify the Doxygen configuration edit the Doxygen.cmake file
+!! when CMake runs this file is copied (with filtering) to ./Doxygen
+
+!! Doxygen will generate HTML content for the source in all subdirs 
+!! of this project. HTML is written to the "html" subdir. I suggest 
+!! copying the entire subdir to your $HOME/public_html/<project_name>
+!! so you can access the generated pages via 
+!! "http://www.scs.fsu.edu/~<username>/<project_name>". Also, Latex
+!! is written to "latex"; however, it is uncompiled. 
+!! If you want to generate a PDF, cd into the "latex" dir
+!! and run "make" (this will output refman.pdf). 
+
+
+!! There is a bug in CMake which does not correctly compile 
+!! fortran modules. If you run make the compiler will give an 
+!! error about a missing <...>.mod.proxy file. This is a problem
+!! in CMake and should be fixed in the next release. For the time 
+!! being we can manually touch the proxy files required in the local 
+!! directory and rerun make to complete compilation. 
